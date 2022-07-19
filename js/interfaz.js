@@ -7,6 +7,9 @@ export const
     h2Resultado = document.querySelector('.letra-resultado h2');
 
 export function spinner() {
+    // Limpiar el HTML previo
+    limpiarHTML();
+
     // Spinner tomado de https://tobiasahlin.com/spinkit/
     const divSpinner = document.createElement('DIV');
     divSpinner.classList.add('sk-fading-circle')
@@ -29,7 +32,10 @@ export function spinner() {
     divResultado.appendChild(divSpinner);
 }
 
-export function quitarSpinner() {
+export function limpiarHTML() {
+    h2Resultado.textContent = '';
+    divResultado.textContent = '';
+
     while (divResultado.firstChild) {
         divResultado.removeChild(divResultado.firstChild);
     }
